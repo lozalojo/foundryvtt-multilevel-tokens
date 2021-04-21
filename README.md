@@ -145,6 +145,20 @@ drawing.update({flags: {"multilevel-tokens": {disabled: !drawing.data.flags["mul
 
 # Version history
 
+* **1.4.0**:
+  * Fixed incorrect calculations for hex grids that was (in particular) causing issues for Vehicles and Mechanisms.
+  * Fixed snap-to-grid option when teleporting between scenes with square grids of differing size.
+  * Fixed calculations for regions with negative width or height.
+  * Slightly increased tolerance for placing click-to-activate map notes.
+  * Fixed that standard map note UI functionality (e.g. deleting) was disabled by the click-to-activate via map note feature.
+  * When updating a cloned token to mirror changes to the original, fields that did not actually change are no longer needlessly updated.
+  * Fixed that a macro region whose macro updated the triggering token could cause spurious additional events to fire on the macro region.
+  * Added Japanese localization (contributed by `touge`).
+  * Updated Spanish localization.
+* **1.3.4**:
+  * Fixed issue introduced by workarounds added in v1.3.3 that prevented cloned tokens from animating when moved.
+* **1.3.3**:
+  * Added workarounds for some issues introduced by the Foundry 0.7.x release series. Remains compatible with 0.6.x.
 * **1.3.2**:
   * Updated Korean localization for features added in 1.3.0 (contributed by KLO).
   * When a token moves from one macro region into another in a single movement, exit triggers for the first region are now run _before_ enter triggers for the second. This avoids issues with cleanup code for the first region interfering with on-enter code for the second in common use-cases.
